@@ -111,6 +111,12 @@ a {
   font-size: 17px;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
 strong {
   /* font-family: 'Lato', Verdana, Helvetica, sans-serif; */
   font-style: 'Monospace';
