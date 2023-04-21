@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Intelligence through Decision Making and Interaction</title>
+    <meta name="author" content="MIDI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="midistyle.css"/>
+    <link href="contact-form.css" rel="stylesheet">
+</head>
+
+<body>
+<!--Header section-->
+    <!--background photo--> <header class="w3-container" style="text-align:center; background-image: url('homepageimages/background-image-midilab.jpeg');
+        background-size: cover; width:100%; max-height: auto">
+        <img src="homepageimages/midilabanimated.png" style="max-width: 30vw; max-height: auto; padding-top:3.5vw">
+        <h1 style="font-weight: bold; color:white"; margin: 1.5%">Getting Involved</h1>
+        <p style="text-align: center; color: white; margin: 1.5%"><em>Machine Intelligence through Decision Making and Interaction</em></p>
+    </header>
+ 
+<!--navigation bar -->
+  <div class="topnav">     
+    <topnav style="list-style: none; font-weight:bold; justify-content: space-around; display: flex ">
+     <center>
+     <a href="index.html">Home</a>
+     <a href="people.html">People</a>
+     <a href="publications.html">Publications</a>
+     <a class="active" href="getting_involved.html" >Getting Involved</a>
+     </center>
+  </topnav>
+</div>
+
+
+<!--prospective phd message -->
+<div class="w3-container" style="margin: 7.5%; margin-bottom: 0%; padding:0%">
+    <h2 style=" color: #70a9ff ">Prospective PhD Students</h2>
+    <p style="max-width: 100%; margin: 0%; margin-top: 1.5%">I currently advise students mainly through the Electrical and Computer Engineering department. However, I can also advise students in the Computer Science department. I am always looking for students interested in reinforcement learning. However, please note that admissions are made at a department level by appointed committees.</p>
+</div>
+
+
+<!--contact us form -->
+<div class="fcf-body">
+
+    <div class="w3-container" style="margin: 7.5%; padding:0%" id="fcf-form">
+    <h2 class="fcf-h3" style=" color: #70a9ff ">Contact us</h2>
+
+    <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+        
+        <div class="fcf-form-group">
+            <a for="Name" class="fcf-label">Your name</a>
+            <div class="fcf-input-group">
+                <input style="width: 100%" type="text" id="Name" name="Name" class="fcf-form-control" required>
+            </div>
+        </div>
+
+        <div class="fcf-form-group">
+            <a for="Email" class="fcf-label">Your email address</a>
+            <div class="fcf-input-group">
+                <input style="width: 100%" type="email" id="Email" name="Email" class="fcf-form-control" required>
+            </div>
+        </div>
+
+        <div class="fcf-form-group">
+            <a for="Message" class="fcf-label">Your message</a>
+            <div class="fcf-input-group">
+                <textarea style="width: 100%"; id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+            </div>
+        </div>
+
+        <div class="fcf-form-group">
+            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+        </div>
+
+    </form>
+    </div>
+
+</div>
+
+<!--Footer--> 
+<div class="footer">
+    <footer>Copyright 2023 | MIDILab | The University of Texas at Austin</footer>
+</div>
+
+</body>
+
+</html>
