@@ -1,106 +1,265 @@
 /* MIDIStyle.css */
 
 html, body {
-    font-size:14pt;
-    font-family: 'Noto Sans', sans-serif;
-    line-height:1.2;
-    box-sizing: border-box;
+  font-size:14pt;
+  font-family: 'Noto Sans', sans-serif;
+  line-height:1.2;
+  box-sizing: border-box;
 }
-    
-   h1 {
-        font-size: 24pt;
-        text-align: center;
-        font-family: Roboto, sans-serif;
-   }
 
-   h2 {
-        font-size: 22pt;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-weight:bold;
-    }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.content {
+  flex: 1 0 auto; /* grow & shrink as needed */
+}
 
-    a { 
-        font-size: 12pt; 
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        
-    }
-    
+.centered-container {
+  max-width: 1000px;    /* or whatever width suits your design */
+  margin: 0 auto;      /* centers the container horizontally */
+  padding: 0 16px;     /* optional: adds a little space on small screens */
+}
 
-   p {
-        font-size: 12pt;
-        color: #000000;
-        text-align: left;
-        margin: 5%; 
-        font-family: Roboto, sans-serif;
-   }
+.midi-header {
+margin: 3;
+padding: 3;
+background: transparent; /* or your preferred background */
+text-align: center;      /* Optional: center content */
+}
 
-   footer {
-        position: fixed;
-        padding: top 5%
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: rgb(179, 179, 179);
-        color: white;
-        text-align: center;
-        font-size: .6rem;
- }
+.midi-logo {
+display: block;
+margin: 0 auto;         
+padding: 0;
+max-width: 30vw;
+height: auto;
+border: none;
+}
 
- #columnleft {
-    float: left;
-    width: 50%;
-    padding: 2.5%;
-    height: auto;
-  }
+.header-title {
+color: rgb(97, 96, 96);
+padding-bottom: 0vw;
+padding-top: 0.5vw;
+margin-bottom: 0.5vw;
+}
   
-  #columnright {
-    float: right;
-    width: 50%;
-    padding: 2.5%;
-    height: auto;
-  }
+h1 {
+    font-size: 22pt;
+    text-align: center;
+    margin-bottom: 10vw;
+}
+
+h2 {
+    font-size: 15pt;
+    text-align: left;
+    /* font-weight:bold; */
+}
+
+
+a { 
+    font-size: 12pt; 
+    text-align: left;
+    
+}
+
+
+p {
+    font-size: 12pt;
+    color: #000000;
+    text-align: left;
+    margin: 5%; 
+}
+
+footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding: 3em 0;
+    width: 100%;
+    background: transparent;
+    color: rgb(97, 96, 96);
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+#columnleft {
+float: left;
+width: 50%;
+padding: 2.5%;
+height: auto;
+}
+
+#columnright {
+float: right;
+width: 50%;
+padding: 2.5%;
+height: auto;
+}
 
 /* Style the top navigation bar */
 .topnav {
-    overflow: hidden;
-    background-color: #333;
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1.5px solid #d4d0d0; 
+  padding-top: 0px;   
+  padding-bottom: 5px; 
+  margin: 0;
+}
+
+.navbar {
+display: flex;
+justify-content: flex-end; /* Right-align */
+gap: 20px;
+font-weight: bold;
+list-style: none;
+margin: 0;
+padding: 0 30px 0 0;
+}
+
+.navbar a {
+text-decoration: none;
+color: #222;
+padding: 5px 10px;
+border-radius: 2px;
+transition: background 0.2s;
+}
+
+.navbar a:hover {
+background-color: #d4d0d0;
+}
+
+/* PEOPLE PAGE */
+.people-section {
+  background: white;
+  padding: 0 0;
+  margin-bottom: 0;
+}
+
+.people-title {
+  color: #444;
+  font-weight: bold;
+  margin-left: 4%;
+  margin-bottom: 2%;
+  font-size: 2em;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5vw 2vw;
+  padding: 0 4%;
+  margin-bottom: 2vw;
+}
+
+.person-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(180,180,180,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw 0.5vw 1vw 0.5vw;
+  min-height: 250px;
+  max-width: 225px;
+  transition: box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.person-card:hover {
+  box-shadow: 
+    0 10px 16px rgba(138, 141, 151, 0.25),  /* main shadow, more visible */
+    0 1.5px 6px rgba(154,160,185,0.12); /* soft edge layer */
+  /* box-shadow: 0 4px 16px rgba(180,180,180,0.5); */
+}
+
+.person-img {
+  border-radius: 18px;
+  border: 1px solid #e0e0e0;
+  max-width: 180px;   
+  max-height: 180px;  
+  object-fit: cover;
+  margin-bottom: 1.2vw;
+}
+
+.person-name {
+  margin-top: 0.5vw;
+  font-weight: bold;
+  color: #222;
+  font-size: 1.13em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.person-desc {
+  display: block;
+  margin-top: 0.3em;
+  color: #666;
+  font-size: 0.98em;
+  font-weight: normal;
+  text-align: center;
+  line-height: 1.3;
+  text-decoration: none !important;
+}
+
+@media (max-width: 900px) {
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* PUBLICATIONS PAGE */
+.paper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 5%;      
+  padding: 0;
+}
+
+.paper-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.paper-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+year {
+  color: #70a9ff;
+  font-size: 30pt;
+  margin: 5%;
+}
+
+/* Mobile friendly nav bar */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;       /* Stack links vertically */
+    align-items: flex-start;      /* Align links to the left (or use center if you prefer) */
+    gap: 10px;                    /* Reduce gap for mobile */
+    padding: 0 10px;              /* Less horizontal padding */
   }
 
-  /* Style the topnav links */
-  .topnav a {
-    font-size: .9rem;
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1.5vw;
-    text-decoration: none;
-  }
-  
-  /* Change color on hover */
-  .topnav a:hover {
-    background-color: #70a9ff;
-    color: black;
-  }
-  
-  /* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .topnav a {
-      float: none;
-      width: 100%;
-    }
-
-    #columnleft, #columnright {
-        width: 100%;
-      }
+  .navbar a {
+    padding: 10px 0;              /* Larger touch area */
+    width: 100%;                  /* Make links full width */
+    box-sizing: border-box;       /* Ensure padding doesn't overflow */
   }
 
-    /* crop people page photos to circle without warping*/
-  #circle {
-    border-radius: 50%;  
-    object-fit: cover;
+  .topnav {
+    padding-bottom: 0;            /* Adjust padding for smaller screens */
+    border-bottom-width: 1px;     /* Optional: thinner border */
   }
- 
+}

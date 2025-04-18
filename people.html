@@ -1,9 +1,10 @@
 <!--TEMPLATE TO ADD NEW PEOPLE - replace caps  
 
-<div class="w3-container" id="column[LEFT or RIGHT]"> 
-  <img src="LINK TO SQUARE PROFILE IMAGE" id="circle" style="border-radius: 50%; border: 10px solid #70a9ff; max-height:125px; max-width: 50%; float: left;"  alt=NAME">
-    <a href="GITHUB LINK" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">NAME</a>
-</div>
+<a href="WEBSITE LINK" class="person-card" target="_blank" rel="noopener">
+      <img src="PHOTO" class="person-img" alt="NAME">
+      <span class="person-name">NAME</span>
+      <span class="person-desc">OPTIONAL TITLE</span>
+    </a>
 
 -->
 
@@ -12,114 +13,135 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Intelligence through Decision Making and Interaction</title>
-    <meta name="author" content="MIDI"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="w3stylesheet.css"/>
-    <link rel="stylesheet" href="midistyle.css"/>
-    <link rel="shortcut icon" type=“image/x-icon” href="favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="homepageimages/midi_icon.jpg" type="image/x-icon">
+  <title>Machine Intelligence through Decision-making and Interaction</title>
+  <meta name="author" content="MIDI">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="midistyle.css"/>
 </head>
 
 <body>
-<!--Header section-->
-    <!--background photo--> <header class="w3-container" style="text-align:center; background-image: url('homepageimages/CoverGradient.png');
-        background-size: cover; width:100%; max-height: auto">
-        <img src="homepageimages/midilabanimated.png" style="max-width: 30vw; max-height: auto; padding-top:3.5vw">
-        <h1 style="font-weight: bold; color:white"; margin: 1.5%">People</h1>
-        <p style="text-align: center; color: white; margin: 1.5%; padding-bottom: 4vw"><em>Machine Intelligence through Decision-making and Interaction</em></p>
-    </header>
- 
-  <!--navigation bar -->
-  <div class="topnav">     
-    <topnav style="list-style: none; font-weight:bold; justify-content: space-around; display: flex ">
-     <center>
-     <a href="index.html">Home</a>
-     <a  class="active" href="people.html">People</a>
-     <a href="publications.html">Publications</a>
-     <a href="getting_involved.html" >Getting Involved</a>
-     </center>
-  </topnav>
+<!-- DO NOT CHANGE, CONSTANT ACROSS ALL PAGES -->
+<!-- Navigation bar -->
+<div class="topnav">
+  <nav class="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="people.html">People</a>
+    <a href="publications.html">Publications</a>
+    <a href="getting_involved.html">Getting Involved</a>
+  </nav>
+</div>
+<!-- MIDI Logo and Lab Title -->
+<header class="midi-header">
+  <img src="homepageimages/midilogo.png" alt="MIDI Logo" class="midi-logo">
+  <h1 class="header-title">Machine Intelligence through Decision-making and Interaction</h1>
+</header>
+
+<div class="centered-container"> 
+
+<!-- Faculty Section -->
+<div class="people-section">
+  <h2 class="people-title">Faculty & Postdocs</h2>
+  <div class="people-grid">
+
+    <!-- Amy -->
+    <a href="https://amyzhang.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/amy.png" class="person-img" alt="Amy Zhang">
+      <span class="person-name">Amy Zhang</span>
+      <span class="person-desc">Assistant Professor</span>
+    </a>
+
+  </div>
 </div>
 
-<div class="gray">
+<!-- PhD Students Section -->
+<div class="people-section">
+  <h2 class="people-title">PhD Students</h2>
+  <div class="people-grid">
 
- <!--Faculty section--> 
-<div class="w3-container" style="background-color: whitesmoke; width: 100%; height:auto%"> 
-  <h2 style="max-width: 100%; color: #70a9ff; font-weight:bold; margin: 5%; margin-top: 2.5%; margin-bottom: 2.5%">Faculty </h2>
+    <!-- Max -->
+    <a href="https://maxrudolph1.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/max.png" class="person-img" alt="Max Rudolph">
+      <span class="person-name">Max Rudolph</span>
+    </a>
+   
+    <!-- Siddhant -->
+    <a href="https://agarwalsiddhant10.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/siddhantsquare.png" class="person-img" alt="Siddhant Agarwal">
+      <span class="person-name">Siddhant Agarwal</span>
+    </a>
 
-  <div class="w3-container" id="columnleft"> 
-    <!--Amy --> <img src="homepageimages/amyzhang.png" id="circle" style="border-radius: 50%; border: 10px solid #70a9ff; max-height:140px; max-width: 50%; float: left;"  alt="Amy Zhang">
-    <a href="https://amyzhang.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Amy Zhang</a>
+    <!-- Carl -->
+    <a href="https://carl-qi.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/carl.jpeg" class="person-img" alt="Carl Qi">
+      <span class="person-name">Carl Qi</span>
+    </a>
+
+    <!-- Haoran -->
+    <a href="https://ryanxhr.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/ryan.jpg" class="person-img" alt="Haoran Xu">
+      <span class="person-name">Haoran Xu</span>
+    </a>
+
+    <!-- Karen -->
+    <a href="https://jiahuikchen.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/karen.png" class="person-img" alt="Jiahui (Karen) Chen">
+      <span class="person-name">Jiahui (Karen) Chen</span>
+    </a>
   </div>
-
-
-<!--paste new faculty  above this line using template--> 
-</div>  
-
- <!--PhD section--> 
- <div class="w3-container" style="background-color: #70a9ff; width: 100%; height:auto"> 
-  <h2 style="max-width: 100%; color: white; font-weight:bold; margin: 5%; margin-top: 2.5%; margin-bottom: 2.5%">PhD Students </h2>
-
-  <div class="w3-container" id="columnright"> 
-    <!--Max --> <img src="peoplepageimages/max.png" id="circle" style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Max Rudolph">
-    <a href="https://maxrudolph1.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Max Rudolph</a>
-  </div>
-
-  <div class="w3-container" id="columnright"> 
-    <!--Caleb --> <img src="peoplepageimages/caleb.jpg" id="circle" style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Caleb Chuck">
-    <a href="http://calcharles.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Caleb Chuck</a>
-  </div>
-  
-  <div class="w3-container" id="columnleft"> 
-    <!--Harshit --> <img src="peoplepageimages/harshit.png" id="circle"  style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Harshit Sikchi">
-    <a href="https://hari-sikchi.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Harshit Sikchi</a>
-  </div>
-
-  <div class="w3-container" id="columnleft"> 
-    <!--Siddhant --> <img src="peoplepageimages/siddhantsquare.png" id="circle" style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Siddhant Agarwal">
-    <a href="https://agarwalsiddhant10.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Siddhant Agarwal</a>
-  </div>
-
-  <div class="w3-container" id="columnleft"> 
-    <!--Carl --> <img src="peoplepageimages/carl.jpeg" id="circle"  style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Daniel Adebi">
-    <a href="https://carl-qi.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Carl Qi</a>
-  </div>
-
-  <div class="w3-container" id="columnleft">
-    <!--Haoran (Ryan) --> <img src="peoplepageimages/ryan.jpg" id="circle"  style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Haoran Xu">
-    <a href="https://ryanxhr.github.io//" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Haoran Xu</a>
-  </div>
-
-   <div class="w3-container" id="columnleft">
-    <!--Jiahui (Karen) --> <img src="peoplepageimages/karen.png" id="circle"  style="border-radius: 50%; border: 10px solid #ffffff; max-height:130px; max-width: 50%; float: left;" alt="Jiahui (Karen) Chen">
-    <a href="https://jiahuikchen.github.io/" style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Jiahui (Karen) Chen</a>
-  </div>
-
-<!--paste new PHD people above this line using template-->
 </div>
 
+<!-- Can Add: Masters Students Section -->
 
- <!--Masters section--> 
- <div class="w3-container" id="columnleft"> 
-  <h2 style="max-width: 100%; color: #70a9ff; font-weight:bold; margin: 5%">Masters Students </h2>
+<!-- Visitng Students -->
+<div class="people-section">
+  <h2 class="people-title">Visiting Students</h2>
+<div class="people-grid">
 
-  <div class="w3-container" id="columnleft" style="width: 100%; height:auto; margin:2.5% "> 
-    <!--Jasmeet --> <img src="peoplepageimages/jasmeet.jpg" style="border-radius: 50%; border: 10px solid #70a9ff; max-height:130px; max-width: 50%; float: left;" alt="Jasmeet Kaur">
-    <a style="margin: 2.5%; max-width: 100%; font-weight:bold; ">Jasmeet Kaur</a> <!--insert github link in this line--> 
-  </div>
-
-
-<!--paste new MASTERS people above this line using template-->
-</div>  
     
+
+  </div>
+</div>
+
+<!-- Undergrads -->
+<div class="people-section">
+  <h2 class="people-title">Undergraduate Students</h2>
+<div class="people-grid">
+
+    
+
+  </div>
+</div>
+
+<!-- Alumni -->
+<div class="people-section">
+  <h2 class="people-title">Alumni</h2>
+  <div class="people-grid">
+
+    <!-- Caleb -->
+    <a href="http://calcharles.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/caleb.jpg" class="person-img" alt="Caleb Chuck">
+      <span class="person-name">Caleb Chuck</span>
+      <span class="person-desc">After Graduation: TODO</span>
+    </a>
+
+    <!-- Harshit -->
+    <a href="https://hari-sikchi.github.io/" class="person-card" target="_blank" rel="noopener">
+      <img src="peoplepageimages/harshit.png" class="person-img" alt="Harshit Sikchi">
+      <span class="person-name">Harshit Sikchi</span>
+      <span class="person-desc">After Graduation: TODO</span>
+    </a>
+
+  </div>
+</div>
+
 </div>
 
 <!--Footer--> 
-<div class="footer" style="padding:1vw">
-  <footer>Copyright 2023 | MIDILab | The University of Texas at Austin</footer>
+<div class="footer">
+  <footer>Copyright 2025 | MIDILab | The University of Texas at Austin</footer>
 </div>
-
 
 </body>
 
