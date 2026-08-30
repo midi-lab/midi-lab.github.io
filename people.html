@@ -1,243 +1,306 @@
-<!--TEMPLATE TO ADD NEW PEOPLE - replace caps  
-
-<a href="WEBSITE LINK" class="person-card" target="_blank" rel="noopener">
-      <img src="PHOTO" class="person-img" alt="NAME">
-      <span class="person-name">NAME</span>
-      <span class="person-desc">OPTIONAL TITLE</span>
-    </a>
-
--->
-
 <!DOCTYPE HTML>
-
 <html lang="en">
 
+<!-- TEMPLATE FOR ADDING A NEW PERSON — replace the CAPS.
+     The <span class="initials"> is a fallback: if the photo is missing or
+     fails to load, the initials show instead of a broken image.
+
+<a href="WEBSITE" class="person-card" target="_blank" rel="noopener">
+  <span class="person-photo">
+    <span class="initials">XY</span>
+    <img src="peoplepageimages/PHOTO" alt="NAME" loading="lazy" onerror="this.remove()">
+  </span>
+  <span class="person-name">NAME</span>
+  <span class="person-desc">OPTIONAL TITLE</span>
+</a>
+-->
+
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People | MIDI Lab</title>
+  <meta name="author" content="MIDI Lab">
+  <meta name="description" content="Faculty, postdocs, students, and alumni of the MIDI Lab at UT Austin.">
   <link rel="icon" href="homepageimages/midi_icon.jpg" type="image/x-icon">
-  <title>MIDI Lab: Machine Intelligence through Decision-making and Interaction</title>
-  <meta name="author" content="MIDI">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lustria&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="midistyle.css"/>
 </head>
 
 <body>
-<!-- DO NOT CHANGE, CONSTANT ACROSS ALL PAGES -->
-<!-- Navigation bar -->
+
+<!-- ============ MASTHEAD (constant across all pages) ============ -->
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="masthead-logo" href="index.html" aria-label="MIDI Lab home">
+      <img src="homepageimages/midilogo.png" alt="MIDI Lab">
+    </a>
+    <div class="masthead-text">
+      <h1 class="site-title">Machine Intelligence through Decision-making and Interaction</h1>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TABS (constant across all pages) ============ -->
 <div class="topnav">
   <nav class="navbar">
-    <a class="active" href="index.html">Home</a>
-    <a href="people.html">People</a>
+    <a href="index.html">Home</a>
+    <a class="active" href="people.html">People</a>
     <a href="publications.html">Publications</a>
     <a href="getting_involved.html">Getting Involved</a>
   </nav>
 </div>
-<!-- MIDI Logo and Lab Title -->
-<header class="midi-header">
-  <img src="homepageimages/midilogo.png" alt="MIDI Logo" class="midi-logo">
-  <h1 class="header-title">Machine Intelligence through Decision-making and Interaction</h1>
-</header>
 
-<div class="centered-container"> 
+<main>
+  <div class="wrap">
 
-<!-- Faculty Section -->
-<div class="people-section">
-  <h2 class="people-title">Faculty & Postdocs</h2>
-  <div class="people-grid">
+    <!-- ============ FACULTY & POSTDOCS ============ -->
+    <section class="people-section">
+      <h2 class="people-title">Faculty &amp; Postdocs</h2>
+      <div class="people-grid">
 
-    <!-- Amy -->
-    <a href="https://amyzhang.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/amy.png" class="person-img" alt="Amy Zhang">
-      <span class="person-name">Amy Zhang</span>
-      <span class="person-desc">Assistant Professor</span>
-    </a>
-    
-    <!-- Claas -->
-    <a href="https://cvoelcker.de/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/claas.jpg" class="person-img" alt="Claas Voelcker">
-      <span class="person-name">Claas Voelcker</span>
-    </a>
+        <a href="https://amyzhang.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">AZ</span>
+            <img src="peoplepageimages/amy.png" alt="Amy Zhang" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Amy Zhang</span>
+          <span class="person-desc">Assistant Professor</span>
+        </a>
+
+        <a href="https://cvoelcker.de/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">CV</span>
+            <img src="peoplepageimages/claas.jpg" alt="Claas Voelcker" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Claas Voelcker</span>
+          <span class="person-desc">Postdoctoral Researcher</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ PHD STUDENTS ============ -->
+    <section class="people-section">
+      <h2 class="people-title">PhD Students</h2>
+      <div class="people-grid">
+
+        <a href="https://maxrudolph1.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">MR</span>
+            <img src="peoplepageimages/max.png" alt="Max Rudolph" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Max Rudolph</span>
+        </a>
+
+        <a href="https://agarwalsiddhant10.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">SA</span>
+            <img src="peoplepageimages/siddhantsquare.png" alt="Siddhant Agarwal" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Siddhant Agarwal</span>
+        </a>
+
+        <a href="https://carl-qi.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">CQ</span>
+            <img src="peoplepageimages/carl.jpeg" alt="Carl Qi" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Carl Qi</span>
+        </a>
+
+        <a href="https://ryanxhr.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">HX</span>
+            <img src="peoplepageimages/ryan.jpg" alt="Haoran Xu" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Haoran Xu</span>
+        </a>
+
+        <a href="https://jiahuikchen.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">JC</span>
+            <img src="peoplepageimages/karen.png" alt="Jiahui (Karen) Chen" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Jiahui (Karen) Chen</span>
+        </a>
+
+        <a href="https://changshiraine.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">CS</span>
+            <img src="peoplepageimages/chang.jpeg" alt="Chang Shi" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Chang Shi</span>
+        </a>
+
+        <a href="https://samp830.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">SP</span>
+            <img src="peoplepageimages/samyak.jpg" alt="Samyak Parajuli" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Samyak Parajuli</span>
+        </a>
+
+        <!-- NOTE: peoplepageimages/shouzhe.jpg does not exist yet — drop the file in
+             and the initials fallback below is replaced automatically. -->
+        <a href="https://shouzhe-li.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">SL</span>
+            <img src="peoplepageimages/shouzhe.jpg" alt="Shouzhe Li" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Shouzhe Li</span>
+        </a>
+
+        <a href="https://dongsuleetech.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">DL</span>
+            <img src="peoplepageimages/dongsul.JPG" alt="Dongsu Lee" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Dongsu Lee</span>
+        </a>
+
+        <a href="https://pragyasrivastava0805.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">PS</span>
+            <img src="peoplepageimages/pragya.jpg" alt="Pragya Srivastava" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Pragya Srivastava</span>
+        </a>
+
+        <a href="https://umkiyoung.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">KO</span>
+            <img src="peoplepageimages/key.jpg" alt="Kiyoung Om" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Kiyoung Om</span>
+        </a>
+
+        <a href="https://matthewh6.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">MH</span>
+            <img src="peoplepageimages/matthew.jpg" alt="Matthew Hong" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Matthew Hong</span>
+        </a>
+
+        <!-- FIXED: the file on disk is yajat.png, not yajat.jpg -->
+        <a href="https://yajatyadav.com/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">YY</span>
+            <img src="peoplepageimages/yajat.png" alt="Yajat Yadav" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Yajat Yadav</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/sooraj-sathish-999594205/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">SS</span>
+            <img src="peoplepageimages/sooraj.jpg" alt="Sooraj Sathish" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Sooraj Sathish</span>
+        </a>
+
+        <a href="https://wj2003b.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">BJ</span>
+            <img src="peoplepageimages/bill.jpg" alt="Bill Zheng" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Bill Zheng</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ MASTERS & VISITING STUDENTS ============ -->
+    <section class="people-section">
+      <h2 class="people-title">Masters &amp; Visiting Students</h2>
+      <div class="people-grid">
+
+        <a href="https://www.linkedin.com/in/prathyusha-guduru-a48a711a4/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">PG</span>
+            <img src="peoplepageimages/prathyusha.png" alt="Prathyusha Guduru" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Prathyusha Guduru</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ UNDERGRADUATE STUDENTS ============ -->
+    <section class="people-section">
+      <h2 class="people-title">Undergraduate Students</h2>
+      <div class="people-grid">
+
+        <a href="https://sarthakdayal.com" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">SD</span>
+            <img src="peoplepageimages/sarthak.jpg" alt="Sarthak Dayal" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Sarthak Dayal</span>
+        </a>
+
+        <a href="https://evankuo.vercel.app/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">EK</span>
+            <img src="peoplepageimages/evan.jpg" alt="Evan Kuo" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Evan Kuo</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/abhinav-peri-94aa82224/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">AP</span>
+            <img src="peoplepageimages/abhinav.jpg" alt="Abhinav Peri" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Abhinav Peri</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ ALUMNI ============ -->
+    <section class="people-section">
+      <h2 class="people-title">Alumni</h2>
+      <div class="people-grid">
+
+        <a href="http://calcharles.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">CC</span>
+            <img src="peoplepageimages/caleb.jpg" alt="Caleb Chuck" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Caleb Chuck</span>
+          <span class="person-desc">Next position: Synthefy</span>
+        </a>
+
+        <a href="https://hari-sikchi.github.io/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">HS</span>
+            <img src="peoplepageimages/harshit.jpg" alt="Harshit Sikchi" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Harshit Sikchi</span>
+          <span class="person-desc">Next position: OpenAI</span>
+        </a>
+
+        <a href="https://sites.google.com/view/alexander-levine/" class="person-card" target="_blank" rel="noopener">
+          <span class="person-photo">
+            <span class="initials">AL</span>
+            <img src="peoplepageimages/alex_levine.jpg" alt="Alexander Levine" loading="lazy" onerror="this.remove()">
+          </span>
+          <span class="person-name">Alexander Levine</span>
+          <span class="person-desc">Next position: OpenAI</span>
+        </a>
+
+      </div>
+    </section>
 
   </div>
-</div>
+</main>
 
-<!-- PhD Students Section -->
-<div class="people-section">
-  <h2 class="people-title">PhD Students</h2>
-  <div class="people-grid">
-
-    <!-- Max -->
-    <a href="https://maxrudolph1.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/max.png" class="person-img" alt="Max Rudolph">
-      <span class="person-name">Max Rudolph</span>
-    </a>
-   
-    <!-- Siddhant -->
-    <a href="https://agarwalsiddhant10.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/siddhantsquare.png" class="person-img" alt="Siddhant Agarwal">
-      <span class="person-name">Siddhant Agarwal</span>
-    </a>
-
-    <!-- Carl -->
-    <a href="https://carl-qi.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/carl.jpeg" class="person-img" alt="Carl Qi">
-      <span class="person-name">Carl Qi</span>
-    </a>
-
-    <!-- Haoran -->
-    <a href="https://ryanxhr.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/ryan.jpg" class="person-img" alt="Haoran Xu">
-      <span class="person-name">Haoran Xu</span>
-    </a>
-
-    <!-- Karen -->
-    <a href="https://jiahuikchen.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/karen.png" class="person-img" alt="Jiahui (Karen) Chen">
-      <span class="person-name">Jiahui (Karen) Chen</span>
-    </a>
-
-    <!-- Chang -->
-    <a href="https://changshiraine.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/chang.jpeg" class="person-img" alt="Chang Shi">
-      <span class="person-name">Chang Shi</span>
-    </a>
-
-    <!-- Samyak -->
-    <a href="https://samp830.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/samyak.jpg" class="person-img" alt="Samyak Parajuli">
-      <span class="person-name">Samyak Parajuli</span>
-    </a>
-
-    <!-- Shouzhe -->
-    <a href="https://shouzhe-li.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/shouzhe.jpg" class="person-img" alt="Shouzhe Li">
-      <span class="person-name">Shouzhe Li</span>
-    </a>
-
-    <!-- Dongsu -->
-    <a href="https://dongsuleetech.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/dongsul.JPG" class="person-img" alt="Dongsu Lee">
-      <span class="person-name">Dongsu Lee</span>
-    </a>
-
-    <!-- Pragya -->
-    <a href="https://pragyasrivastava0805.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/pragya.jpg" class="person-img" alt="Pragya Srivastava">
-      <span class="person-name">Pragya Srivastava</span>
-    </a>
-
-    <!-- Key -->
-    <a href="https://umkiyoung.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/key.jpg" class="person-img" alt="Kiyoung Om">
-      <span class="person-name">Kiyoung Om</span>
-    </a>
-
-    <!-- Matthew -->
-    <a href="https://matthewh6.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/matthew.jpg" class="person-img" alt="Matthew Hong">
-      <span class="person-name">Matthew Hong</span>
-    </a>
-
-    <!-- Yajat -->
-    <a href="https://yajatyadav.com/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/yajat.jpg" class="person-img" alt="Yajat Yadav">
-      <span class="person-name">Yajat Yadav</span>
-    </a>
-
-    <!-- Sooraj -->
-    <a href="https://www.linkedin.com/in/sooraj-sathish-999594205/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/sooraj.jpg" class="person-img" alt="Sooraj Sathish">
-      <span class="person-name">Sooraj Sathish</span>
-    </a>
-
-
-
-  </div>
-</div>
-
-
-<!-- Masters & Visitng Students -->
-<div class="people-section">
-  <h2 class="people-title">Masters & Visiting Students</h2>
-  <div class="people-grid">
-
-<!--    &lt;!&ndash; Pierriccardo &ndash;&gt;-->
-<!--    <a href="https://pierriccardo.github.io/" class="person-card" target="_blank" rel="noopener">-->
-<!--      <img src="peoplepageimages/pierriccardo.jpg" class="person-img" alt="Pierriccardo Olivieri">-->
-<!--      <span class="person-name">Pierriccardo Olivieri</span>-->
-<!--    </a>-->
-
-    <!-- Prathyusha -->
-    <a href="https://www.linkedin.com/in/prathyusha-guduru-a48a711a4/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/prathyusha.png" class="person-img" alt="Prathyusha Guduru">
-      <span class="person-name">Prathyusha Guduru</span>
-    </a>
-
-  </div>
-</div>
-
-<!-- Undergrads -->
-<div class="people-section">
-  <h2 class="people-title">Undergraduate Students</h2>
-  <div class="people-grid">
-
-    <!-- Sarthak -->
-    <a href="https://sarthakdayal.com" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/sarthak.jpg" class="person-img" alt="Sarthak Dayal">
-      <span class="person-name">Sarthak Dayal</span>
-    </a>
-
-    <!-- Evan -->
-    <a href="https://evankuo.vercel.app/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/evan.jpg" class="person-img" alt="Evan Kuo">
-      <span class="person-name">Evan Kuo</span>
-    </a>
-
-    <!-- Abhinav -->
-    <a href="https://www.linkedin.com/in/abhinav-peri-94aa82224/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/abhinav.jpg" class="person-img" alt="Abhinav Peri">
-      <span class="person-name">Abhinav Peri</span>
-    </a>
-
-  </div>
-</div>
-
-<!-- Alumni -->
-<div class="people-section">
-  <h2 class="people-title">Alumni</h2>
-  <div class="people-grid">
-
-    <!-- Caleb -->
-    <a href="http://calcharles.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/caleb.jpg" class="person-img" alt="Caleb Chuck">
-      <span class="person-name">Caleb Chuck</span>
-      <span class="person-desc">Next Position: Synthefy</span>
-    </a>
-
-    <!-- Harshit -->
-    <a href="https://hari-sikchi.github.io/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/harshit.jpg" class="person-img" alt="Harshit Sikchi">
-      <span class="person-name">Harshit Sikchi</span>
-      <span class="person-desc">Next Position: OpenAI</span>
-    </a>
-
-    <!-- Alex -->
-    <a href="https://sites.google.com/view/alexander-levine/" class="person-card" target="_blank" rel="noopener">
-      <img src="peoplepageimages/alex_levine.jpg" class="person-img" alt="Alexander Levine">
-      <span class="person-name">Alexander Levine</span>
-      <span class="person-desc">Next Position: OpenAI</span>
-    </a>
-
-  </div>
-</div>
-
-</div>
-
-<!--Footer--> 
-<div class="footer">
-  <footer>Copyright 2025 | MIDILab | The University of Texas at Austin</footer>
-</div>
+<footer class="site-footer">
+  <div class="wrap"><p>Copyright 2026 &middot; MIDI Lab &middot; The University of Texas at Austin</p></div>
+</footer>
 
 </body>
-
 </html>

@@ -1,59 +1,150 @@
 <!DOCTYPE HTML>
-
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="homepageimages/midi_icon.jpg" type="image/x-icon">
-    <title>Machine Intelligence through Decision-making and Interaction</title>
-    <meta name="author" content="MIDI">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="midistyle.css"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIDI Lab | Machine Intelligence through Decision-making and Interaction</title>
+  <meta name="author" content="MIDI Lab">
+  <meta name="description" content="The MIDI Lab at UT Austin, led by Professor Amy Zhang, studies reinforcement learning that generalizes and adapts for sequential decision-making in the real world.">
+  <link rel="icon" href="homepageimages/midi_icon.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lustria&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="midistyle.css"/>
 </head>
 
 <body>
-<!-- DO NOT CHANGE, CONSTANT ACROSS ALL PAGES -->
-<!-- Navigation bar -->
-<div class="topnav">
-    <nav class="navbar">
-      <a class="active" href="index.html">Home</a>
-      <a href="people.html">People</a>
-      <a href="publications.html">Publications</a>
-      <a href="getting_involved.html">Getting Involved</a>
-    </nav>
+
+<!-- ============ MASTHEAD (constant across all pages) ============ -->
+<!-- Emblem sits top-left as the mark for the space; lab name sits above the tabs. -->
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="masthead-logo" href="index.html" aria-label="MIDI Lab home">
+      <img src="homepageimages/midilogo.png" alt="MIDI Lab">
+    </a>
+    <div class="masthead-text">
+      <h1 class="site-title">Machine Intelligence through Decision-making and Interaction</h1>
+    </div>
   </div>
-<!-- MIDI Logo and Lab Title -->
-<header class="midi-header">
-    <img src="homepageimages/midilogo.png" alt="MIDI Logo" class="midi-logo">
-    <h1 class="header-title">Machine Intelligence through Decision-making and Interaction</h1>
 </header>
 
-
-<div class="centered-container" style="max-width: 1200px"> 
-
-<!--About the lab section-->
-<div class="content" style="width:100%; height:auto; padding-top: 1.5vw; padding-bottom: 2vw">
-    <!--photo of lab members-->
-    <img src="homepageimages/lab.jpeg" 
-         style="box-sizing: unset; padding: 0%; margin-right: 8vw; margin: 5%; margin-top:2.5%; max-height:auto; max-width: 35%; float: left;" 
-         alt="Lab members">
-    <h2 style="margin: 5%; margin-top:2.5%; margin-bottom: 1.5%; font-weight:bold">About the Lab</h2>
-    <p style="margin-top: 1.5%">
-        The MIDI group is led by <a href="https://amyzhang.github.io/">Professor Amy Zhang</a> and a part of The University of Texas at Austin, Department of Electrical and Computer Engineering.
-        <br><br>
-        We focus on improving reinforcement learning algorithms to generalize and adapt for sequential decision-making problems in the real world. 
-        <br>
-        Our research centers on reinforcement learning but also touches upon the areas of representation learning, generative models, robot learning, and multi-agent learning.
-    </p>
+<!-- ============ TABS (constant across all pages) ============ -->
+<div class="topnav">
+  <nav class="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="people.html">People</a>
+    <a href="publications.html">Publications</a>
+    <a href="getting_involved.html">Getting Involved</a>
+  </nav>
 </div>
 
-</div>
+<main>
+  <div class="wrap">
 
-<!--Footer--> 
-<div class="footer">
-    <footer>Copyright 2025 | MIDILab | The University of Texas at Austin</footer>
-</div>
+    <!-- ============ HERO ============ -->
+    <div class="hero" id="hero">
+      <div class="hero-slide is-active"><img src="homepageimages/lab.jpeg" alt="MIDI Lab members"></div>
+      <div class="hero-slide"><img src="homepageimages/2026-spring-social-web.jpg" alt="MIDI Lab spring social"></div>
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
 
-</body> 
+    <!-- ============ ABOUT ============ -->
+    <section class="section">
+      <h2 class="section-title">About the Lab</h2>
+      <p>
+        The MIDI group is led by <a href="https://amyzhang.github.io/" target="_blank" rel="noopener">Professor Amy Zhang</a>
+        and is part of The University of Texas at Austin, Department of Electrical and Computer Engineering.
+      </p>
+      <p>
+        We focus on improving reinforcement learning algorithms to generalize and adapt for sequential
+        decision-making problems in the real world. Our research centers on reinforcement learning but also
+        touches upon representation learning, generative models, robot learning, and multi-agent learning.
+      </p>
+    </section>
 
+    <!-- TEMPORARILY HIDDEN — What We Work On
+
+    [[ ============ RESEARCH ============ ]]
+    <section class="section">
+      <h2 class="section-title">
+        What We Work On
+        <a class="more" href="publications.html">All publications &rarr;</a>
+      </h2>
+      <div class="area-grid">
+        <div class="area">
+          <h3>Reinforcement Learning</h3>
+          <p>Offline, goal-conditioned, and dual formulations of RL for sequential decision-making.</p>
+        </div>
+        <div class="area">
+          <h3>Representation Learning</h3>
+          <p>State abstractions and representations that stay robust to exogenous noise and distractors.</p>
+        </div>
+        <div class="area">
+          <h3>Generative Models</h3>
+          <p>Diffusion and behavior-generation models used directly as policies and planners.</p>
+        </div>
+        <div class="area">
+          <h3>Robot Learning</h3>
+          <p>Manipulation, navigation, and hardware testbeds that put our algorithms on real robots.</p>
+        </div>
+        <div class="area">
+          <h3>Multi-Agent Learning</h3>
+          <p>Coordination between agents, and policy gradient methods for imperfect-information games.</p>
+        </div>
+        <div class="area">
+          <h3>Foundation Models for Behavior</h3>
+          <p>Zero-shot language-to-behavior and behavioral foundation models that adapt quickly.</p>
+        </div>
+      </div>
+    </section>
+
+    -->
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Copyright 2026 &middot; MIDI Lab &middot; The University of Texas at Austin</p></div>
+</footer>
+
+<script>
+/* Minimal cross-fade for the hero images — no external dependencies. */
+(function () {
+  var hero = document.getElementById('hero');
+  if (!hero) return;
+  var slides = Array.prototype.slice.call(hero.querySelectorAll('.hero-slide'));
+  var dotWrap = document.getElementById('heroDots');
+  if (slides.length < 2) { if (dotWrap) dotWrap.remove(); return; }
+
+  var index = 0, timer;
+
+  var dots = slides.map(function (_, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Show photo ' + (i + 1));
+    if (i === 0) b.className = 'is-active';
+    b.addEventListener('click', function () { show(i); restart(); });
+    dotWrap.appendChild(b);
+    return b;
+  });
+
+  function show(next) {
+    slides[index].classList.remove('is-active');
+    dots[index].classList.remove('is-active');
+    index = next;
+    slides[index].classList.add('is-active');
+    dots[index].classList.add('is-active');
+  }
+
+  function advance() { show((index + 1) % slides.length); }
+  function restart() { clearInterval(timer); timer = setInterval(advance, 6000); }
+
+  restart();
+  hero.addEventListener('mouseenter', function () { clearInterval(timer); });
+  hero.addEventListener('mouseleave', restart);
+})();
+</script>
+
+</body>
 </html>

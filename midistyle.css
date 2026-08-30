@@ -1,265 +1,463 @@
-/* MIDIStyle.css */
+/* ============================================================
+   MIDI Lab — midistyle.css
+   Typography:
+     body      : Source Sans 3   (A)  — the seohong.me feel
+     headings  : Lustria         (B)  — from the UT AMRL reference
+     lab name  : Lustria         — AMRL's own title is a plain <h1>, so it is Lustria too
+                                   (their `header h1 { Playfair Display }` rule is dead CSS —
+                                    that layout has no <header> element)
+     tabs      : Lato            — as AMRL sets its nav
+   Palette is UT Austin: burnt orange #BF5700 on charcoal #333F48.
+   ============================================================ */
 
-html, body {
-  font-size:14pt;
-  font-family: 'Noto Sans', sans-serif;
-  line-height:1.2;
-  box-sizing: border-box;
+:root {
+  --ut-orange:      #bf5700;
+  --ut-orange-dark: #96450b;
+  --charcoal:       #333f48;
+  --ink:            #23282d;
+  --muted:          #5f6b73;
+  --faint:          #8a949b;
+  --rule:           #e4e4e2;
+  --rule-strong:    #cfcfcb;
+  --bg:             #ffffff;
+  --bg-soft:        #f7f6f4;
+
+  --font-body: 'Source Sans 3', 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Lustria', Georgia, 'Times New Roman', serif;
+  --font-nav: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --wrap: 860px;
+  --gutter: 28px;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
-.content {
-  flex: 1 0 auto; /* grow & shrink as needed */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
 }
 
-.centered-container {
-  max-width: 1000px;    /* or whatever width suits your design */
-  margin: 0 auto;      /* centers the container horizontally */
-  padding: 0 16px;     /* optional: adds a little space on small screens */
+img { max-width: 100%; height: auto; border: 0; }
+
+a { color: var(--ut-orange); text-decoration: none; }
+a:hover { color: var(--ut-orange-dark); text-decoration: underline; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  color: var(--charcoal);
+  margin: 0 0 .6em;
+  line-height: 1.25;
 }
 
-.midi-header {
-margin: 3;
-padding: 3;
-background: transparent; /* or your preferred background */
-text-align: center;      /* Optional: center content */
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+/* ------------------------------------------------------------
+   Masthead: emblem top-left, lab name on top, tabs underneath
+   ------------------------------------------------------------ */
+.masthead {
+  padding: 24px 0 16px;
 }
 
-.midi-logo {
-display: block;
-margin: 0 auto;         
-padding: 0;
-max-width: 30vw;
-height: auto;
-border: none;
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
-.header-title {
-color: rgb(97, 96, 96);
-padding-bottom: 0vw;
-padding-top: 0.5vw;
-margin-bottom: 0.5vw;
-}
-  
-h1 {
-    font-size: 22pt;
-    text-align: center;
-    margin-bottom: 10vw;
+.masthead-logo { flex: 0 0 auto; display: block; }
+.masthead-logo img {
+  display: block;
+  width: 132px;
+  height: auto;
 }
 
-h2 {
-    font-size: 15pt;
-    text-align: left;
-    /* font-weight:bold; */
-}
+.masthead-text { min-width: 0; }
 
-
-a { 
-    font-size: 12pt; 
-    text-align: left;
-    
-}
-
-
-p {
-    font-size: 12pt;
-    color: #000000;
-    text-align: left;
-    margin: 5%; 
-}
-
-footer {
-    flex-shrink: 0;
-    margin-top: auto;
-    padding: 3em 0;
-    width: 100%;
-    background: transparent;
-    color: rgb(97, 96, 96);
-    text-align: center;
-    font-size: 0.7rem;
-}
-
-#columnleft {
-float: left;
-width: 50%;
-padding: 2.5%;
-height: auto;
-}
-
-#columnright {
-float: right;
-width: 50%;
-padding: 2.5%;
-height: auto;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background: transparent;
-  border-bottom: 1.5px solid #d4d0d0; 
-  padding-top: 0px;   
-  padding-bottom: 5px; 
+.site-title {
+  font-family: var(--font-head);
+  font-weight: 400;
+  /* scales with the viewport so the lab name always stays on one line */
+  font-size: clamp(0.86rem, 2.25vw, 1.34rem);
+  letter-spacing: -.01em;   /* AMRL tightens its h1 the same way */
+  line-height: 1.25;
+  white-space: nowrap;
+  color: var(--charcoal);
   margin: 0;
 }
 
+/* ------------------------------------------------------------
+   Tabs
+   ------------------------------------------------------------ */
 .navbar {
-display: flex;
-justify-content: flex-end; /* Right-align */
-gap: 20px;
-font-weight: bold;
-list-style: none;
-margin: 0;
-padding: 0 30px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  width: calc(100% - 2 * var(--gutter));
+  max-width: calc(var(--wrap) - 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
 .navbar a {
-text-decoration: none;
-color: #222;
-padding: 5px 10px;
-border-radius: 2px;
-transition: background 0.2s;
+  font-family: var(--font-nav);
+  font-size: .86rem;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+  padding: 13px 18px;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
 }
 
 .navbar a:hover {
-background-color: #d4d0d0;
+  color: var(--ut-orange);
+  background: var(--bg-soft);
+  text-decoration: none;
 }
 
-/* PEOPLE PAGE */
-.people-section {
-  background: white;
-  padding: 0 0;
-  margin-bottom: 0;
+.navbar a.active {
+  color: var(--ut-orange);
+  border-bottom-color: var(--ut-orange);
 }
+
+/* ------------------------------------------------------------
+   Page scaffolding
+   ------------------------------------------------------------ */
+main { flex: 1 0 auto; padding: 34px 0 8px; }
+
+.section { margin-bottom: 44px; }
+.section:last-child { margin-bottom: 22px; }
+
+.section-title {
+  font-size: 1.32rem;
+  margin: 0 0 .2em;
+  padding-bottom: .35em;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-title .more {
+  float: right;
+  font-family: var(--font-body);
+  font-size: .78rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ut-orange);
+  padding-top: .5em;
+}
+
+.lede { color: var(--muted); font-size: .95rem; margin: .9em 0 1.2em; }
+
+/* ------------------------------------------------------------
+   Home — hero
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 38px;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero-slide.is-active { opacity: 1; }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.hero-dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.hero-dots button {
+  width: 8px; height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.55);
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.hero-dots button.is-active { background: var(--ut-orange); }
+
+/* ------------------------------------------------------------
+   Home — research areas
+   ------------------------------------------------------------ */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 1.1em;
+}
+
+.area {
+  padding: 14px 16px;
+  background: var(--bg-soft);
+  border-left: 3px solid var(--rule-strong);
+  transition: border-color .15s ease, background .15s ease;
+}
+.area:hover { border-left-color: var(--ut-orange); background: #f2f0ec; }
+
+.area h3 {
+  font-size: .98rem;
+  margin: 0 0 .3em;
+  color: var(--charcoal);
+}
+.area p { font-size: .86rem; color: var(--muted); line-height: 1.5; margin: 0; }
+
+/* ------------------------------------------------------------
+   PEOPLE
+   ------------------------------------------------------------ */
+.people-section { margin-bottom: 34px; }
 
 .people-title {
-  color: #444;
-  font-weight: bold;
-  margin-left: 4%;
-  margin-bottom: 2%;
-  font-size: 2em;
+  font-size: 1.15rem;
+  color: var(--charcoal);
+  margin: 0 0 .9em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--rule);
 }
 
 .people-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5vw 2vw;
-  padding: 0 4%;
-  margin-bottom: 2vw;
+  gap: 22px 18px;
 }
 
 .person-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 8px rgba(180,180,180,0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1vw 0.5vw 1vw 0.5vw;
-  min-height: 250px;
-  max-width: 225px;
-  transition: box-shadow 0.2s;
+  padding: 10px 8px 12px;
+  border-radius: 6px;
   text-decoration: none;
+  color: inherit;
+  transition: background .15s ease, box-shadow .15s ease;
 }
 
 .person-card:hover {
-  box-shadow: 
-    0 10px 16px rgba(138, 141, 151, 0.25),  /* main shadow, more visible */
-    0 1.5px 6px rgba(154,160,185,0.12); /* soft edge layer */
-  /* box-shadow: 0 4px 16px rgba(180,180,180,0.5); */
+  text-decoration: none;
+  background: var(--bg-soft);
+  box-shadow: inset 0 0 0 1px var(--rule);
 }
 
-.person-img {
-  border-radius: 18px;
-  border: 1px solid #e0e0e0;
-  max-width: 180px;   
-  max-height: 180px;  
+.person-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--charcoal);
+  margin-bottom: 9px;
+}
+
+.person-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
-  margin-bottom: 1.2vw;
+  display: block;
+}
+
+/* shown when the photo is missing or fails to load */
+.person-photo .initials {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  letter-spacing: .05em;
+  color: #fff;
 }
 
 .person-name {
-  margin-top: 0.5vw;
-  font-weight: bold;
-  color: #222;
-  font-size: 1.13em;
+  font-family: var(--font-head);
+  font-size: .93rem;
+  line-height: 1.3;
+  color: var(--charcoal);
   text-align: center;
-  text-decoration: underline;
+  text-decoration: none;          /* no underlines under names */
+  transition: color .15s ease;
 }
+.person-card:hover .person-name { color: var(--ut-orange); }
 
 .person-desc {
   display: block;
-  margin-top: 0.3em;
-  color: #666;
-  font-size: 0.98em;
-  font-weight: normal;
+  margin-top: .25em;
+  font-size: .76rem;
+  line-height: 1.35;
+  color: var(--muted);
   text-align: center;
-  line-height: 1.3;
-  text-decoration: none !important;
 }
 
-@media (max-width: 900px) {
-  .people-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* ------------------------------------------------------------
+   PUBLICATIONS
+   ------------------------------------------------------------ */
+.pub-year {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  color: var(--ut-orange);
+  letter-spacing: .1em;
+  margin: 30px 0 6px;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--rule);
 }
-@media (max-width: 600px) {
-  .people-grid {
-    grid-template-columns: 1fr;
-  }
-}
+.pub-year:first-of-type { margin-top: 6px; }
 
-
-/* PUBLICATIONS PAGE */
-.paper-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 5%;      
-  padding: 0;
-}
-
-.paper-info {
-  flex: 1 1 auto;
-  min-width: 0;
+.pub {
+  position: relative;
+  padding: 12px 14px;
+  border-radius: 5px;
+  transition: background .15s ease, box-shadow .15s ease;
 }
 
-.paper-logo {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  margin-left: 20px;
+/* the "tab" separation only appears on hover, like the people cards */
+.pub:hover {
+  background: var(--bg-soft);
+  box-shadow: inset 3px 0 0 var(--ut-orange);
+}
+
+.pub.has-thumb { padding-right: 168px; }
+
+.pub-title {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.pub:hover .pub-title { color: var(--ut-orange); text-decoration: none; }
+
+.pub-authors {
+  font-size: .87rem;
+  color: var(--muted);
+  margin: .25em 0 .2em;
+}
+.pub-authors .me { color: var(--charcoal); }
+
+.pub-links { font-size: .84rem; margin: 0; }
+.pub-links a { color: var(--ut-orange); }
+.pub-links .venue { color: var(--charcoal); }
+
+/* "|" instead of "/" between arxiv / project page / code */
+.pub-links .sep {
+  color: var(--rule-strong);
+  margin: 0 .5em;
+  user-select: none;
+}
+
+/* thumbnail is revealed on hover — only for papers that actually have one,
+   and it is absolutely positioned so nothing shifts */
+.pub-thumb {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 140px;
+  height: 88px;
+  transform: translateY(-50%) translateX(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.pub-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pub:hover .pub-thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+/* ------------------------------------------------------------
+   GETTING INVOLVED
+   ------------------------------------------------------------ */
+.prose { max-width: 720px; }
+.prose h2 {
+  font-size: 1.15rem;
+  margin-top: 1.6em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--rule);
+}
+.prose h2:first-child { margin-top: 0; }
+.prose p { font-size: .97rem; }
+
+.callout {
+  background: var(--bg-soft);
+  border-left: 3px solid var(--ut-orange);
+  padding: 14px 18px;
+  margin: 1.2em 0;
+  font-size: .93rem;
+}
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
   flex-shrink: 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--rule);
+  padding: 20px 0 28px;
+}
+.site-footer p {
+  font-family: var(--font-head);
+  text-align: center;
+  font-size: .78rem;
+  color: var(--faint);
+  margin: 0;
 }
 
-year {
-  color: #70a9ff;
-  font-size: 30pt;
-  margin: 5%;
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+@media (max-width: 860px) {
+  .people-grid { grid-template-columns: repeat(3, 1fr); }
+  .area-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile friendly nav bar */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;       /* Stack links vertically */
-    align-items: flex-start;      /* Align links to the left (or use center if you prefer) */
-    gap: 10px;                    /* Reduce gap for mobile */
-    padding: 0 10px;              /* Less horizontal padding */
-  }
+@media (max-width: 640px) {
+  :root { --gutter: 18px; }
+  .masthead-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .masthead-logo img { width: 112px; }
+  /* one line is a desktop goal — on a phone the name has to wrap */
+  .site-title { white-space: normal; font-size: clamp(0.98rem, 4.2vw, 1.15rem); }
+  .navbar { justify-content: flex-start; }
+  .navbar a { padding: 11px 12px; font-size: .76rem; }
+  .people-grid { grid-template-columns: repeat(3, 1fr); }
+  .area-grid { grid-template-columns: 1fr; }
+  .hero { aspect-ratio: 4 / 3; }
+  .section-title .more { float: none; display: block; padding-top: .4em; }
 
-  .navbar a {
-    padding: 10px 0;              /* Larger touch area */
-    width: 100%;                  /* Make links full width */
-    box-sizing: border-box;       /* Ensure padding doesn't overflow */
-  }
+  /* no room for hover thumbnails on touch screens */
+  .pub.has-thumb { padding-right: 14px; }
+  .pub-thumb { display: none; }
+}
 
-  .topnav {
-    padding-bottom: 0;            /* Adjust padding for smaller screens */
-    border-bottom-width: 1px;     /* Optional: thinner border */
-  }
+@media (max-width: 420px) {
+  .people-grid { grid-template-columns: repeat(2, 1fr); }
 }
