@@ -31,7 +31,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lustria&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="midistyle.css"/>
+  <!-- ?v= is a cache-buster: GitHub Pages serves this file with
+       cache-control: max-age=600, so without it a browser can pair new
+       HTML with a stale stylesheet. Bump it whenever midistyle.css changes. -->
+  <link rel="stylesheet" href="midistyle.css?v=2"/>
 </head>
 
 <body>
@@ -380,19 +383,31 @@
   var opener  = null;
 
   function open(src, title) {
+    // if the lightbox stylesheet did not load, opening would drop a full-size
+    // figure at the foot of the page instead of over it — send the reader to
+    // the image itself rather than doing something that looks broken
+    if (window.getComputedStyle(box).position !== 'fixed') {
+      window.open(src, '_blank', 'noopener');
+      return;
+    }
     img.src = src;
     img.alt = title ? 'Figure from ' + title : '';
     caption.textContent = title || '';
     box.hidden = false;
     // one frame before adding the class so the transition actually runs
     requestAnimationFrame(function () { box.classList.add('is-open'); });
+    // locking the scroll removes the scrollbar, which would jog the page
+    // sideways on platforms that reserve room for it — pad that width back
+    var bar = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = 'hidden';
+    if (bar > 0) { document.body.style.paddingRight = bar + 'px'; }
     closeBtn.focus();
   }
 
   function close() {
     box.classList.remove('is-open');
     document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
     if (opener) { opener.focus(); opener = null; }
     window.setTimeout(function () {
       if (!box.classList.contains('is-open')) { box.hidden = true; img.src = ''; }
@@ -407,6 +422,13 @@
     var button = document.createElement('button');
     button.type = 'button';
     button.setAttribute('aria-label', title ? 'View figure for ' + title : 'View figure');
+    // reset the button's own box here rather than in the stylesheet: this
+    // element only exists when the script has run, and styling it inline means
+    // a cached older midistyle.css cannot frame the figure in the browser's
+    // default button border
+    button.style.cssText =
+      'display:block;width:100%;height:100%;padding:0;border:0;' +
+      'background:none;cursor:zoom-in;';
     thumb.parentNode.insertBefore(button, thumb);
     button.appendChild(thumb);
 

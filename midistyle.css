@@ -396,19 +396,20 @@ main { flex: 1 0 auto; padding: 34px 0 8px; }
 
 /* once the thumbnail is visible it is also clickable — it opens the lightbox */
 .pub:hover .pub-thumb,
-.pub:focus-within .pub-thumb { pointer-events: auto; }
-.pub-thumb button {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: zoom-in;
-}
+.pub:has(.pub-thumb button:focus-visible) .pub-thumb { pointer-events: auto; }
+/* the button that wraps the thumbnail is created by the script on
+   publications.html, and it resets its own box there — inline, so a stale
+   copy of this stylesheet can never leave it with the browser's default
+   button border drawn around the figure */
 .pub-thumb button:focus-visible { outline: 2px solid var(--ut-orange); outline-offset: 2px; }
-/* keyboard users need the thumbnail on screen when its button takes focus */
-.pub:focus-within .pub-thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
+/* Keyboard users need the thumbnail on screen when its button takes focus.
+   This is :focus-visible, not :focus-within — a mouse click also focuses the
+   button, and with :focus-within that thumbnail stayed pinned open after the
+   lightbox closed, floating over the list until you clicked somewhere else. */
+.pub:has(.pub-thumb button:focus-visible) .pub-thumb {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
 
 /* ------------------------------------------------------------
    LIGHTBOX (full view of a paper figure)
