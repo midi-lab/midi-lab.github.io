@@ -359,5 +359,73 @@
   <div class="wrap"><p>Copyright 2026 &middot; MIDI Lab &middot; The University of Texas at Austin</p></div>
 </footer>
 
+<!-- ============ LIGHTBOX ============
+     Click a paper thumbnail to see the figure full size. The thumbnails are
+     wrapped in a button here rather than in the markup above, so the template
+     at the top of this file stays as it is — a new paper gets this for free. -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Paper figure" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <figure class="lightbox-figure">
+    <img src="" alt="">
+    <figcaption class="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var box     = document.getElementById('lightbox');
+  var img     = box.querySelector('.lightbox-figure img');
+  var caption = box.querySelector('.lightbox-caption');
+  var closeBtn = box.querySelector('.lightbox-close');
+  var opener  = null;
+
+  function open(src, title) {
+    img.src = src;
+    img.alt = title ? 'Figure from ' + title : '';
+    caption.textContent = title || '';
+    box.hidden = false;
+    // one frame before adding the class so the transition actually runs
+    requestAnimationFrame(function () { box.classList.add('is-open'); });
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close() {
+    box.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (opener) { opener.focus(); opener = null; }
+    window.setTimeout(function () {
+      if (!box.classList.contains('is-open')) { box.hidden = true; img.src = ''; }
+    }, 200);
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.pub-thumb img'), function (thumb) {
+    var article = thumb.closest('.pub');
+    var titleEl = article && article.querySelector('.pub-title');
+    var title = titleEl ? titleEl.textContent.trim() : '';
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', title ? 'View figure for ' + title : 'View figure');
+    thumb.parentNode.insertBefore(button, thumb);
+    button.appendChild(thumb);
+
+    button.addEventListener('click', function () {
+      opener = button;
+      open(thumb.currentSrc || thumb.src, title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  // clicking the backdrop closes; clicking the figure itself does not
+  box.addEventListener('click', function (e) {
+    if (!e.target.closest('.lightbox-figure')) { close(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && box.classList.contains('is-open')) { close(); }
+  });
+})();
+</script>
+
 </body>
 </html>

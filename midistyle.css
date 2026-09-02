@@ -394,6 +394,97 @@ main { flex: 1 0 auto; padding: 34px 0 8px; }
 .pub-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .pub:hover .pub-thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
 
+/* once the thumbnail is visible it is also clickable — it opens the lightbox */
+.pub:hover .pub-thumb,
+.pub:focus-within .pub-thumb { pointer-events: auto; }
+.pub-thumb button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.pub-thumb button:focus-visible { outline: 2px solid var(--ut-orange); outline-offset: 2px; }
+/* keyboard users need the thumbnail on screen when its button takes focus */
+.pub:focus-within .pub-thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+/* ------------------------------------------------------------
+   LIGHTBOX (full view of a paper figure)
+   ------------------------------------------------------------ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 28px;
+  background: rgba(35, 40, 45, .88);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .18s ease, visibility .18s ease;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox[hidden] { display: none; }
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.lightbox-figure img {
+  display: block;
+  max-width: min(1100px, 100%);
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: var(--bg);
+  border-radius: 4px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .45);
+  transform: scale(.98);
+  transition: transform .18s ease;
+}
+.lightbox.is-open .lightbox-figure img { transform: scale(1); }
+
+.lightbox-caption {
+  font-family: var(--font-head);
+  font-size: .95rem;
+  line-height: 1.4;
+  color: #fff;
+  text-align: center;
+  max-width: 720px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  font: 400 1.6rem/1 var(--font-body);
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, .26); }
+.lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox, .lightbox-figure img { transition: none; }
+}
+
 /* ------------------------------------------------------------
    GETTING INVOLVED
    ------------------------------------------------------------ */
